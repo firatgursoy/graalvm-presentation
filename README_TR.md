@@ -97,6 +97,27 @@ class:
 
 ---
 
+# Örnek Uygulama
+
+Oracle indirmelerinden GraalVM'i indirin ve kurun. Bir ``Example.java`` dosyası oluşturun.
+
+```java
+public class Example {
+
+    public static void main(String[] args) {
+        System.out.println("Merhaba GraalVM");
+    }
+}
+```
+
+```shell
+#Bu komutları çağırın :
+javac Example.java
+native-image Example
+```
+
+---
+
 <!-- 
 class:
   - lead
@@ -127,6 +148,14 @@ Quarkus Testleri
 Bu deneyimden sonra ihtiyacım için bir demo uygulaması yaptım. Başlangıç ve bellek ayak izini gerçekten önemli ölçüde azaltıyor. :)
 
 ![w:1024](https://raw.githubusercontent.com/firatgursoy/graalvm-presentation/main/images/demoapp.png)
+
+---
+
+# Destek
+
+GraalVM teknolojileri, üretime hazır ve deneysel olarak dağıtılır.
+
+GraalVM'nin gelecekteki sürümleri için deneysel özellikler değerlendirilmektedir ve üretimde kullanılması amaçlanmamıştır. Geliştirme ekibi, deneysel özelliklerle ilgili geri bildirimleri memnuniyetle karşılar, ancak kullanıcılar, deneysel özelliklerin hiçbir zaman son sürüme dahil edilmeyebileceğini veya üretime hazır kabul edilmeden önce önemli ölçüde değişebileceğini bilmelidir.
 
 ---
 <!-- _footer: Fırat GÜRSOY - Senior Software Developer / May 2021--> 

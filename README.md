@@ -155,11 +155,10 @@ After this experience i made a demo application for my requirement. It's really 
 
 ---
 # Features Support
+
 GraalVM technologies are distributed as production-ready and experimental.
 
 Experimental features are being considered for future versions of GraalVM and are not meant to be used in production. The development team welcomes feedback on experimental features, but users should be aware that experimental features might never be included in a final version, or might change significantly before being considered production-ready.
-
-![w:1024](https://raw.githubusercontent.com/firatgursoy/graalvm-presentation/main/images/support.png)
 
 ---
 
