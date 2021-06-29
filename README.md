@@ -12,23 +12,23 @@ class:
 
 
 # About
-![w:300](https://github.com/firatgursoy/graalvm-presentation/raw/main/logo.svg)
+![w:300](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/logo.svg)
 
 #
-![w:360](https://github.com/firatgursoy/graalvm-presentation/raw/main/adesso-logo.png)
+![w:360](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/adesso-logo.png)
 
 
 ---
 # The question is
-![w:800](https://github.com/firatgursoy/graalvm-presentation/raw/main/frame-why-java-slow.png)
+![w:800](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/frame-why-java-slow.png)
 
 ---
 # What we can do?
-![w:800](https://github.com/firatgursoy/graalvm-presentation/raw/main/frame-java-performance.png)
+![w:800](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/frame-java-performance.png)
 
 ---
 # So what is the solution?
-![java](https://github.com/firatgursoy/graalvm-presentation/raw/main/comic1.png)![4ever](https://github.com/firatgursoy/graalvm-presentation/raw/main/comic2.png)
+![java](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/comic1.png)![4ever](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/comic2.png)
 
 ---
 # What is GraalVM ?
@@ -47,13 +47,13 @@ class:
 
 # GraalVM Architecture
 
-![w:800](https://github.com/firatgursoy/graalvm-presentation/raw/main/architecture.png)
+![w:800](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/architecture.png)
 
 ---
 # Native Image
 
 
-![](https://github.com/firatgursoy/graalvm-presentation/raw/main/native-executable-process.png)
+![](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/native-executable-process.png)
 
 ###### The ``native executable`` for our application will contain the ``application code``, ``required libraries``, ``Java APIs``, and ``a reduced version of a VM``. The smaller VM base improves the ``startup time`` of the application and produces a ``minimal disk footprint``.
 
@@ -124,13 +124,13 @@ public class NativeGreetingResourceIT extends GreetingResourceTest {
 ---
 # Performance
 
-![w:1024](https://github.com/firatgursoy/graalvm-presentation/raw/main/quarkus_test.png)
+![w:1024](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/quarkus_test.png)
 Quarkus Test
 
 ---
 After this experience i made a demo application for my requirement. It's really reducing startup and memory footprint dramatically. :)
 
-![w:1024](https://github.com/firatgursoy/graalvm-presentation/raw/main/demoapp.png)
+![w:1024](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/demoapp.png)
 
 ---
 <!-- _footer: Fırat GÜRSOY - Senior Software Developer / May 2021--> 
@@ -141,4 +141,4 @@ After this experience i made a demo application for my requirement. It's really 
 * Spring
 * JavaFX / GluonHQ
 * Google and Wiki
-* ![w:360](https://github.com/firatgursoy/graalvm-presentation/raw/main/adesso-logo.png)
+* ![w:360](https://github.com/firatgursoy/graalvm-presentation/raw/main/images/adesso-logo.png)
