@@ -1,0 +1,9 @@
+/* @theme firat-theme */
+
+@import 'gaia';
+
+
+
+:root {
+  background-image: url("bg.png");  
+}
