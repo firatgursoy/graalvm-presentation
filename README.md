@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: firat-theme
 class:
   - lead
@@ -33,6 +33,7 @@ class:
 # What is GraalVM ?
 
 `GraalVM` is a **high-performance** JDK distribution designed to **accelerate the execution of applications** written in `Java` and other JVM languages along with support for `JavaScript`, `Ruby`, `Python` and **_a number of other popular languages_**. `GraalVM`’s polyglot capabilities make it possible to mix multiple programming languages in a single application while **_eliminating foreign language call costs_**.
+`GraalVM` created by ``Oracle``. The first production-ready version, ``GraalVM 19.0``, was released in ``May 2019``. There is no equivalent technology what GraalVM do.
 
 ---
 # What can GraalVM give me?
@@ -100,6 +101,27 @@ class:
 
 ---
 
+# Sample Application
+
+Download and install GraalVM from oracle downloads. Create an ``Example.java`` file.
+
+```java
+public class Example {
+
+    public static void main(String[] args) {
+        System.out.println("Hello GraalVM");
+    }
+}
+```
+
+```shell
+#Run following commands :
+javac Example.java
+native-image Example
+```
+
+---
+
 <!-- 
 class:
   - lead
@@ -132,6 +154,15 @@ After this experience i made a demo application for my requirement. It's really 
 ![w:1024](https://raw.githubusercontent.com/firatgursoy/graalvm-presentation/main/images/demoapp.png)
 
 ---
+# Features Support
+GraalVM technologies are distributed as production-ready and experimental.
+
+Experimental features are being considered for future versions of GraalVM and are not meant to be used in production. The development team welcomes feedback on experimental features, but users should be aware that experimental features might never be included in a final version, or might change significantly before being considered production-ready.
+
+![w:1024](https://raw.githubusercontent.com/firatgursoy/graalvm-presentation/main/images/support.png)
+
+---
+
 <!-- _footer: Fırat GÜRSOY - Senior Software Developer / May 2021--> 
 # Special thanks to
 
