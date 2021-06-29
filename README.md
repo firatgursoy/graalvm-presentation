@@ -133,7 +133,7 @@ After this experience i made a demo application for my requirement. It's really 
 
 ---
 <!-- _footer: Fırat GÜRSOY - Senior Software Developer / May 2021--> 
-# Spacial thanks to
+# Special thanks to
 
 * Oracle
 * Quarkus
