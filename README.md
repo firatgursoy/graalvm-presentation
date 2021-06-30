@@ -241,9 +241,9 @@ Lightning fast jvm startup time !
 ---
 # OS memory usages by the app
 
-![](images/cute_memory_usage.png)
+![](https://raw.githubusercontent.com/firatgursoy/graalvm-presentation/main/images/cute_memory_usage.png)
 
-![](images/cute_memory_usage_jar.png)
+![](https://raw.githubusercontent.com/firatgursoy/graalvm-presentation/main/images/cute_memory_usage_jar.png)
 
 
 We have 200MB saving from memory usage ! 
