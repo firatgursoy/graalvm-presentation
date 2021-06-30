@@ -217,7 +217,7 @@ After that, i created a distribution folder than copied the native image and all
 ![w:1024](https://raw.githubusercontent.com/firatgursoy/graalvm-presentation/main/images/demoapp.png)
 
 ---
-# Startup time metrics from my app
+# Startup time metrics from the app
 
 
 ```shell
