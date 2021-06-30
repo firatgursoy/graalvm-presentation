@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 theme: firat-theme
 class:
   - lead
@@ -149,11 +149,6 @@ public class NativeGreetingResourceIT extends GreetingResourceTest {
 Quarkus Test
 
 ---
-After this experience i made a demo application for my requirement. It's really reducing startup and memory footprint dramatically. :)
-
-![w:1024](https://raw.githubusercontent.com/firatgursoy/graalvm-presentation/main/images/demoapp.png)
-
----
 # Features Support
 
 GraalVM technologies are distributed as production-ready and experimental.
@@ -161,13 +156,107 @@ GraalVM technologies are distributed as production-ready and experimental.
 Experimental features are being considered for future versions of GraalVM and are not meant to be used in production. The development team welcomes feedback on experimental features, but users should be aware that experimental features might never be included in a final version, or might change significantly before being considered production-ready.
 
 ---
+After that knowage i tried to make a demo application for my individual requirement. 
+
+Firstly i have prefer a desktop application with stylish UI.
+(relatively:))
+
+That means the application sadly use a lot of memory. So i need to use ``JavaFX`` also ``Gluon``(a native JavaFX solution) for improve to performance .
+
+
+---
+# What I did for graalvm integration?
+
+For that integration i have only added a plugin to my maven pom. Surprisingly that is enough for the integration.
+
+---
+
+```xml
+<plugin>
+	<groupId>com.gluonhq</groupId>
+	<artifactId>gluonfx-maven-plugin</artifactId>
+	<version>1.0.2</version>
+	<configuration>
+		<target>host</target>
+		<mainClass>com.gnosis.cuteoverlay.Application</mainClass>
+		<reflectionList>
+			<list>com.gnosis.cuteoverlay.Application</list>
+			<list>com.gnosis.cuteoverlay.DataToSend</list>
+			<list>com.gnosis.cuteoverlay.DataToSendContainer</list>
+		</reflectionList>
+		<graalvmHome>C:\dev\tools\graalvm-svm-windows-gluon-21.2.0-dev</graalvmHome>
+		<nativeImageArgs>
+			<imageArg>-Dio.netty.noUnsafe=true</imageArg>
+			<imageArg>--report-unsupported-elements-at-runtime</imageArg>
+			<imageArg>--allow-incomplete-classpath --enable-all-security-services</imageArg>
+			<imageArg>--enable-url-protocols=https -H:EnableURLProtocols=http</imageArg>
+			<imageArg>-H:TraceClassInitialization=true</imageArg>
+			<imageArg>--initialize-at-build-time=${buildtime-classes}</imageArg>
+			<imageArg>--initialize-at-run-time=${runtime-classes}</imageArg>
+		</nativeImageArgs>
+	</configuration>
+</plugin>
+```
+---
+
+The main time spending problem is dedicating build and runtime classes also classes what used by Java's reflection. Also that lists depend on what libraries you used.
+
+After several tries, the native image prepared successfully.
+
+```shell
+#creates native image
+mvn gluonfx:build
+```
+
+After that, i created a distribution folder than copied the native image and all other executables what i need to run business logic.
+
+---
+
+# And finally
+
+![w:1024](https://raw.githubusercontent.com/firatgursoy/graalvm-presentation/main/images/demoapp.png)
+
+---
+# Startup time metrics from my app
+
+
+```shell
+# Jar Log
+Uptime:781ms
+StartTime:Wed Jun 30 02:02:09 EET 2021
+Max heap memory is 4086 MBytes
+Used non-heap memory is 32 MBytes
+```
+
+```shell
+# Native Image(exe) Log
+Uptime:1ms
+StartTime:Wed Jun 30 02:06:14 TRT 2021
+Max heap memory is 0 MBytes
+Used non-heap memory is 0 MBytes
+```
+
+Lightning fast jvm startup time ! 
+
+---
+# OS memory usages by the app
+
+![](images/cute_memory_usage.png)
+
+![](images/cute_memory_usage_jar.png)
+
+
+We have 200MB saving from memory usage ! 
+
+---
 
 <!-- _footer: Fırat GÜRSOY - Senior Software Developer / May 2021--> 
 # Special thanks to
 
-* Oracle
-* Quarkus
-* Spring
-* JavaFX / GluonHQ
+* Oracle, Quarkus, JavaFX / GluonHQ, Spring
 * Google and Wiki
 * ![w:360](https://raw.githubusercontent.com/firatgursoy/graalvm-presentation/main/images/adesso-logo.png)
+
+You can reach the source code and windows builds via git.
+
+https://github.com/firatgursoy/CuteOverlay
